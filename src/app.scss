@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 *,
 ::after,
 ::before {
@@ -8,4 +10,14 @@
 
 html {
   font-size: 62.5%;
+}
+
+body {
+  font-family: "Baloo Tamma 2", cursive;
+  width: 80vw;
+  height: 100vh;
+  margin: auto;
+  background: rgb(135, 52, 114);
+  background: linear-gradient(0deg, rgba(135, 52, 114, 1) 0%, rgba(175, 188, 255, 1) 100%);
+  background-repeat: no-repeat;
 }

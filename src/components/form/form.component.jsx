@@ -19,6 +19,32 @@ class Form extends React.Component {
       description: e.target.value,
     });
   };
+
+  newDate = () => {
+    let date = new Date();
+    const dtf = new Intl.DateTimeFormat("de-DE", {
+      year: "numeric",
+      month: "short",
+      day: "2-digit",
+      hour: "numeric",
+      minute: "numeric",
+      second: "numeric",
+    });
+    const [
+      { value: mo },
+      ,
+      { value: da },
+      ,
+      { value: ye },
+      ,
+      { value: ho },
+      ,
+      { value: min },
+      ,
+      { value: sec },
+    ] = dtf.formatToParts(date);
+    return `${mo}/${da}/${ye} ${ho}:${min}:${sec}`;
+  };
   handleSubmit = (e) => {
     const { newItem } = this.props;
     e.preventDefault();
@@ -26,6 +52,7 @@ class Form extends React.Component {
       description: this.state.description,
       checked: false,
       id: uniqid(),
+      createdAt: this.newDate(),
     });
 
     const fields = document.querySelectorAll("input");

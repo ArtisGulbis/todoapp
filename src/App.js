@@ -26,7 +26,7 @@ class App extends Component {
   };
 
   generateTodoCard = (list) => {
-    return list.map(({ description, id, checked }) => {
+    return list.map(({ description, id, checked, createdAt }) => {
       switch (checked) {
         case true:
           return (
@@ -34,6 +34,7 @@ class App extends Component {
               description={description}
               key={id}
               id={id}
+              createdAt={createdAt}
               handleEvent={(e) => this.handleEvent(e)}
               type={["check", "remove"]}
             >
@@ -47,6 +48,7 @@ class App extends Component {
               description={description}
               key={id}
               id={id}
+              createdAt={createdAt}
               handleEvent={(e) => this.handleEvent(e)}
               type={["check", "remove"]}
             >
