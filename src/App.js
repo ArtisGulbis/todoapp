@@ -55,7 +55,9 @@ class App extends Component {
 							<p data-type="check" data-id={id}>
 								done
 							</p>
-							<p data-type="remove">remove</p>
+							<p data-type="remove" data-id={id}>
+								remove
+							</p>
 						</li>
 					);
 
@@ -66,7 +68,9 @@ class App extends Component {
 							<p data-type="check" data-id={id}>
 								not done
 							</p>
-							<p data-type="remove">remove</p>
+							<p data-type="remove" data-id={id}>
+								remove
+							</p>
 						</li>
 					);
 

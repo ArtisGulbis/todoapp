@@ -19,9 +19,10 @@ const listReducer = (state = INITIAL_STATE, action) => {
 			};
 
 		case TODOTypes.REMOVE:
+			console.log(state.list.filter((el) => (el.id !== action.payload ? el : null)));
 			return {
 				...state,
-				list: state.list.filter((el) => (el.id !== action.payload ? null : el))
+				list: state.list.filter((el) => (el.id !== action.payload ? el : null))
 			};
 		default:
 			return state;
